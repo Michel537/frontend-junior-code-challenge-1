@@ -1,9 +1,14 @@
 const mongoose = require('mongoose');
 const Artikel = require('../models/Artikel.model');
+
+// fs modul for working with files and csv parser package from npm 
 const fs = require("fs");
 const csvParser = require("csv-parser");
 
 const result = [];
+
+
+// Using createReadStream and csv parser to transform .csv into JSON
 
 fs.createReadStream("../Artikel.csv")
   .pipe(csvParser())
@@ -15,7 +20,11 @@ fs.createReadStream("../Artikel.csv")
   });
 
 
+  
+
 const MONGO_URI = process.env.MONGODB_URI || 'mongodb://localhost/artikel';
+
+// Connecting to mongoDb and creting the objects of our JSON file on our database
 
 mongoose
 .connect(MONGO_URI)
