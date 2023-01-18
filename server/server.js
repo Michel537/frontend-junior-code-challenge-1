@@ -1,10 +1,11 @@
 const express = require("express");
 const app = express();
 
+// ℹ️ Connects to the database
+require("./db/index");
 
 
 const MONGO_URI = process.env.MONGODB_URI || 'mongodb://localhost/artikel';
-
 
 
 
