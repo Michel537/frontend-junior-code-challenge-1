@@ -22,8 +22,8 @@ const ArtikelListPage = () => {
   }, []);
 
   return (
-    <>
-      <h1>Articles</h1>
+    <>      
+      
       <ArtikelList artikel={artikel} />
     </>
   );

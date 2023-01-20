@@ -1,25 +1,22 @@
 const mongoose = require('mongoose');
 const Artikel = require('../models/Artikel.model');
 
-// fs modul for working with files and csv parser package from npm 
+// fs modul for working with files 
 const fs = require("fs");
-const csvParser = require("csv-parser");
 
-const result = [];
+var csvjson = require('csvjson');
 
-
-// Using createReadStream and csv parser to transform .csv into JSON
-
-fs.createReadStream("../Artikel.csv")
-  .pipe(csvParser())
-  .on("data", (data) => {
-    result.push(data);
-  })
-  .on("end", () => {
-    console.log(result);
-  });
+var path = require('path');
 
 
+var data = fs.readFileSync("../Artikel.csv", { encoding : 'utf8'});
+
+var options = {
+    delimiter : ';', 
+    quote     : '"' 
+  };
+
+ const arrayData = csvjson.toObject(data, options);  
   
 
 const MONGO_URI = process.env.MONGODB_URI || 'mongodb://localhost/artikel';
@@ -30,10 +27,10 @@ mongoose
 .connect(MONGO_URI)
 .then((x) => {
   console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`);
-  return Artikel.create(result);
+  return Artikel.create(arrayData);
 })
 .then(itemsFromDB => {
-  console.log(`Created ${result.length} artikel`);
+  console.log(`Created ${arrayData.length} artikel`);
 
   //close DB
   return mongoose.connection.close();

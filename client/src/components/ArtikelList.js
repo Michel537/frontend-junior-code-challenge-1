@@ -1,18 +1,23 @@
 import Table from "react-bootstrap/Table";
+import { Spinner } from "react-bootstrap";
 
 const ArtikelList = ({ artikel }) => {
-  console.log(Array.isArray(artikel));
+ 
 
   return (
     <>
+    <br />
       {!artikel ? (
-        <h3>Wait for artikel to load</h3>
+        <Spinner animation="border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
       ) : (
         <>
+          <h1>Artikel</h1>
           <Table striped bordered hover>
             <thead>
               <tr>              
-                
+                <th>Hauptartikelnr</th>
                 <th>Artikelname</th>
                 <th>Hersteller</th>
                 <th>Beschreibung</th>
@@ -35,6 +40,7 @@ const ArtikelList = ({ artikel }) => {
                 {artikel.map((artikel) => (
                   <>
                     <tr>
+                      <td>{artikel.Hauptartikelnr}</td>
                       <td>{artikel.Artikelname}</td>
                       <td>{artikel.Hersteller} </td>
                       <td>{artikel.Beschreibung} </td>
