@@ -39,7 +39,7 @@ Um das Projekt lokal auszuführen, folgendes in der Commandline / Bash eingeben:
 
 ```console
 Client:
-$ git clone <linktorepository> udg-probeaufgabe
+$ git clone <https://github.com/Michel537/frontend-junior-code-challenge-1.git> udg-probeaufgabe
 $ cd udg-probeaufgab
 $ cd client
 $ npm install

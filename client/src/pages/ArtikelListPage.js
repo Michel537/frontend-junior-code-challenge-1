@@ -7,6 +7,8 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 const ArtikelListPage = () => {
+
+  // Getting Data from Api and save it on artikel
   const [artikel, setArtikel] = useState([]);
 
   const getArtikel = () => {
