@@ -23,8 +23,6 @@ Name | Begründung
 --- | ---
 [mongoosejs](https://mongoosejs.com/) | Zur Berechnung von Datumswerten und Umwandlung von Formaten.
 [react-Bootstrap](https://react-bootstrap.github.io/) | Einfaches RWD Framework zur Gestaltung des Frontends
-[csvjson] (https://www.npmjs.com/package/csvjson) | Um CSV-Daten in Json umzuwandeln
-[react-csv] (https://www.npmjs.com/package/react-csv?activeTab=readme) | Um Json in CSV-Daten umzuwandeln und herunterladen.
 
 ## Installation / Ausführen des Projektes
 
@@ -43,19 +41,20 @@ Um das Projekt lokal auszuführen, folgendes in der Commandline / Bash eingeben:
 Client:
 $ git clone <linktorepository> udg-probeaufgabe
 $ cd udg-probeaufgab
-& cd client
+$ cd client
 $ npm install
 $ npm run start
 ---
 Server:
 $ cd udg-probeaufgab
-& cd server
+$ cd server
 $ npm install
-Bevor wir unseren Server starten, müssen wir eine .env File mit den folgenden Daten erstellen:
+
+(Bevor wir unseren Server starten, müssen wir eine .env File mit den folgenden Daten erstellen:
 
 PORT = 5000
 ORIGIN=http://localhost:3000
-MONGODB_URI = 'mongodb://localhost/artikel'
+MONGODB_URI = 'mongodb://localhost/artikel')
 
 $ npm run dev
 
