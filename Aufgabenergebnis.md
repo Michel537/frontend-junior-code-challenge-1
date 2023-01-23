@@ -56,6 +56,7 @@ PORT = 5000
 ORIGIN=http://localhost:3000
 MONGODB_URI = 'mongodb://localhost/artikel')
 
+$ node seed/artikel.seed.js (to seed the database wtih Artikel.csv data)
 $ npm run dev
 
 
