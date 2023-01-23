@@ -1,7 +1,13 @@
+import { Container } from "react-bootstrap";
+
 const HomePage = () => (
   
     <>
-      <h1>Hello, welcome to my tech Challange!</h1>
+    <Container>
+
+      <h1>Welcome to the UDG-United-Digital-Group tech Challange 1!</h1>
+      
+    </Container>
      
     </>
   );

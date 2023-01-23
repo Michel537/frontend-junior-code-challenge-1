@@ -1,7 +1,10 @@
 import Table from "react-bootstrap/Table";
 import { Spinner } from "react-bootstrap";
+import { useEffect } from "react";
 
-const ArtikelList = ({ artikel }) => {
+const ArtikelList = ({ artikel }) => {  
+
+  
  
 
   return (
@@ -12,8 +15,7 @@ const ArtikelList = ({ artikel }) => {
           <span className="visually-hidden">Loading...</span>
         </Spinner>
       ) : (
-        <>
-          <h1>Artikel</h1>
+        <>          
           <Table striped bordered hover>
             <thead>
               <tr>              
@@ -39,7 +41,7 @@ const ArtikelList = ({ artikel }) => {
               <>
                 {artikel.map((artikel) => (
                   <>
-                    <tr>
+                    <tr key={artikel.Hauptartikelnr}>
                       <td>{artikel.Hauptartikelnr}</td>
                       <td>{artikel.Artikelname}</td>
                       <td>{artikel.Hersteller} </td>

@@ -52,6 +52,7 @@ function CreateArtikel() {
       .post(`http://localhost:5000/api/artikel`, newArtikel)
       .then((artikel) => {
         console.log("Artikel sucessfully created" + artikel);
+        navigate("/artikel");
       })
       .catch((err) => console.log("Problem creating a new Artikel" + err));
   };
@@ -71,7 +72,6 @@ function CreateArtikel() {
               name="Hauptartikelnr"
               value={Hauptartikelnr}
               placeholder="Here the Hauptartikelnr"
-              required
               onChange={(e) => {
                 setHauptartikelnr(e.target.value);
               }}
@@ -90,7 +90,6 @@ function CreateArtikel() {
               name="Artikelname"
               value={Artikelname}
               placeholder="Here the Artikelname"
-              required
               onChange={(e) => {
                 setArtikelname(e.target.value);
               }}
@@ -109,7 +108,6 @@ function CreateArtikel() {
               name="Hersteller"
               value={Hersteller}
               placeholder="Here the Hersteller"
-              required
               onChange={(e) => {
                 setHersteller(e.target.value);
               }}
@@ -128,7 +126,6 @@ function CreateArtikel() {
               name="Beschreibung"
               value={Beschreibung}
               placeholder="Here the Beschreibung"
-              required
               onChange={(e) => {
                 setBeschreibung(e.target.value);
               }}
@@ -147,7 +144,6 @@ function CreateArtikel() {
               name="Materialangaben"
               value={Materialangaben}
               placeholder="Here the Materialangaben"
-              required
               onChange={(e) => {
                 setMaterialangaben(e.target.value);
               }}
@@ -166,7 +162,6 @@ function CreateArtikel() {
               name="Geschlecht"
               value={Geschlecht}
               placeholder="Here the Geschlecht"
-              required
               onChange={(e) => {
                 setGeschlecht(e.target.value);
               }}
@@ -185,7 +180,6 @@ function CreateArtikel() {
               name="Produktart"
               value={Produktart}
               placeholder="Here the Produktart"
-              required
               onChange={(e) => {
                 setProduktart(e.target.value);
               }}
@@ -204,7 +198,6 @@ function CreateArtikel() {
               name="Ärmel"
               value={Ärmel}
               placeholder="Here the Ärmel"
-              required
               onChange={(e) => {
                 setÄrmel(e.target.value);
               }}
@@ -223,7 +216,6 @@ function CreateArtikel() {
               name="Bein"
               value={Bein}
               placeholder="Here the Bein"
-              required
               onChange={(e) => {
                 setBein(e.target.value);
               }}
@@ -242,7 +234,6 @@ function CreateArtikel() {
               name="Kragen"
               value={Kragen}
               placeholder="Here the Kragen"
-              required
               onChange={(e) => {
                 setKragen(e.target.value);
               }}
@@ -261,7 +252,6 @@ function CreateArtikel() {
               name="Herstellung"
               value={Herstellung}
               placeholder="Here the Herstellung"
-              required
               onChange={(e) => {
                 setHerstellung(e.target.value);
               }}
@@ -280,7 +270,6 @@ function CreateArtikel() {
               name="Taschenart"
               value={Taschenart}
               placeholder="Here the Taschenart"
-              required
               onChange={(e) => {
                 setTaschenart(e.target.value);
               }}
@@ -299,7 +288,6 @@ function CreateArtikel() {
               name="Grammatur"
               value={Grammatur}
               placeholder="Here the Grammatur"
-              required
               onChange={(e) => {
                 setGrammatur(e.target.value);
               }}
@@ -318,7 +306,6 @@ function CreateArtikel() {
               name="Material"
               value={Material}
               placeholder="Here the Material"
-              required
               onChange={(e) => {
                 setMaterial(e.target.value);
               }}
@@ -337,7 +324,6 @@ function CreateArtikel() {
               name="Ursprungsland"
               value={Ursprungsland}
               placeholder="Here the Ursprungsland"
-              required
               onChange={(e) => {
                 setUrsprungsland(e.target.value);
               }}
@@ -356,7 +342,6 @@ function CreateArtikel() {
               name="Bildname"
               value={Bildname}
               placeholder="Here the Bildname"
-              required
               onChange={(e) => {
                 setBildname(e.target.value);
               }}
@@ -367,7 +352,9 @@ function CreateArtikel() {
         <Button variant="primary" type="submit">
           CreateArtikel
         </Button>
-        <Button onClick={ () => navigate("/artikel")} variant="primary">ToArtikel</Button>
+        <Button onClick={() => navigate("/artikel")} variant="primary">
+          Back
+        </Button>
       </Form>
     </Container>
   );
